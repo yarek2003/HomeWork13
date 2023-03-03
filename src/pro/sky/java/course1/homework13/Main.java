@@ -11,7 +11,7 @@ public class Main {
         System.out.println(lordOfTheFlies.getTitle() + " " + golding.getFirstName() +
                 " " + golding.getLastName()  + " " +  lordOfTheFlies.getYear());
     idiot.setYear(2000);
-        System.out.println("Идиот, Издание " + idiot.year + " года");
+        System.out.println("Идиот, Издание " + idiot.getYear() + " года");
     }
 
 }
