@@ -1,8 +1,8 @@
 package pro.sky.java.course1.homework13;
 
 public class Author {
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
     public Author (String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;

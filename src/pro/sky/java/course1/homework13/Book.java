@@ -1,9 +1,9 @@
 package pro.sky.java.course1.homework13;
 
 public class Book {
-    String title;
-    Author author;
-    int year;
+    private String title;
+    private Author author;
+    private int year;
     public Book(String title, Author author, int year) {
         this.title = title;
         this.author = author;
