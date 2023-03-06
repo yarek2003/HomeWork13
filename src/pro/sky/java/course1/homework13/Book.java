@@ -1,5 +1,7 @@
 package pro.sky.java.course1.homework13;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private Author author;
@@ -25,20 +27,24 @@ public class Book {
     public void setYear(int year) {
         this.year = year;
     }
+
+    @Override
+    public String toString() {
+        return "\"" + title + "\"," + " " + author.toString() + ", " + year ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return year == book.year && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, year);
+    }
 }
 
 
-/*
-Создайте класс Book, который содержит в себе данные о названии, авторе и годе публикации книги. Типы полей должны быть String, Author (его мы создадим в п. 2) и int.
-Создайте класс Author, который содержит в себе данные об имени и фамилии автора.
-Напишите конструкторы для обоих классов, заполняющие все поля.
-Создайте геттеры для всех полей автора и всех полей книги.
-Создайте сеттер для поля «Год публикации» у книги.
-В методе main создайте несколько объектов «Книга» (достаточно двух) и несколько объектов «Автор» (достаточно тоже двух) и инициализируйте их.
-Учтите, что авторы являются обязательными и книги не могут создаваться без авторов.
-Метод main не должен находиться в классах Book и Author.
-
-Создайте отдельный класс для запуска приложения и объявите метод main в нем.
-
-В том же методе main измените год публикации одной из книг с помощью сеттера.
- */
